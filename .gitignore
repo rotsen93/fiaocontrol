@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# android monorepo artifacts
+fiaocontrol-android/.gradle/
+fiaocontrol-android/.idea/
+fiaocontrol-android/build/
+fiaocontrol-android/app/build/
+fiaocontrol-android/local.properties
+fiaocontrol-android/**/*.iml
