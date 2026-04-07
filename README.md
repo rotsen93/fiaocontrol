@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FiaoControl
 
-## Getting Started
+FiaoControl es una plataforma para colmados que ayuda a registrar fiados, abonos y balances de clientes de forma simple.
 
-First, run the development server:
+El objetivo del proyecto es digitalizar una operacion que normalmente se lleva en libreta, pero con una experiencia pensada para uso real en mostrador: rapida, clara y amigable para usuarios no tecnicos.
+
+## Que estoy desarrollando
+
+Actualmente el desarrollo esta enfocado en:
+
+- Registro y autenticacion por colmado (Supabase Auth).
+- Gestion de clientes y sus balances.
+- Registro de movimientos (`fiao` y `abono`) con historial.
+- Envio de estado por WhatsApp con detalle de deuda.
+- Dashboard y estadisticas para apoyar decisiones de cobro.
+- App Android como canal principal de uso diario.
+
+## Estructura del repositorio
+
+- `src/`, `public/`, `supabase/`: aplicacion web y backend/schema para MVP.
+- `fiaocontrol-android/`: app Android principal (Kotlin + Jetpack Compose).
+
+## Stack principal
+
+- Frontend web: Next.js + TypeScript
+- App movil: Kotlin + Jetpack Compose
+- Backend/Auth/DB: Supabase (Postgres + Auth + REST)
+
+## Como ejecutar el proyecto
+
+### Web (Next.js)
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Android (app principal)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Abre Android Studio en la carpeta `fiaocontrol-android/`.
+2. Sincroniza Gradle.
+3. Ejecuta en emulador o dispositivo.
 
-## Learn More
+Opcional por terminal:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cd fiaocontrol-android
+./gradlew :app:assembleDebug
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estado actual
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Proyecto en fase MVP, iterando rapidamente sobre experiencia de colmadero, claridad de datos y flujo de cobro.
 
-## Deploy on Vercel
+## Vision
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Convertir FiaoControl en una herramienta diaria para colmados que permita:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Cobrar mejor
+- Reducir perdida por fiado desorganizado
+- Tener control real del negocio con pocos toques
